@@ -85,7 +85,6 @@ document.forms[0].addEventListener("submit", (e) => {
       fetch(`https://api.github.com/users/${value}`)
         .then((api) => api.json())
         .then((user) => {
-          console.log(user);
           const newLecturer = new Lecturer(user);
           newLecturer.createLecturerDiv();
         });

@@ -18,22 +18,28 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #e8eaff;
 
-  padding: 30px 80px 80px 80px;
+  /* padding: 30px 80px 80px 80px; */
 }
 
 .preview .lecturers {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.preview .lecturer .username {
+  color: #7b85e1;
 }
 
 .preview .lecturer {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-
-  margin-bottom: 250px;
+  align-items: center;
+  max-width: 245px;
 }
 
 .preview .lecturer img {
@@ -51,29 +57,35 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #7b84e1;
+}
+
+.preview .event  {
+  color: white;
 }
 
 .preview .event strong {
-  color: #b8c36f;
+  color: white;
 }
 
 .preview .title {
   font-weight: bold;
+  color: white;
 }
 
 .preview .date {
   font-weight: 400;
-  color: #be95be;
+  color: black;
 }
 
 .preview .date span {
-  color: #c5c8c6;
+  color: #470038;
 }
 
 .preview .time {
   font-weight: 400;
-  color: #71a3c1;
+  color: black;
 }
 .preview .time span {
-  color: #c5c8c6;
+  color: white;
 }
