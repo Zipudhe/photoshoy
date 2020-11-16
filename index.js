@@ -1,5 +1,28 @@
 let counter = 0;
 
+class Lecturer { 
+  constructor({login, avatar_url}){
+    this.login = login;
+    this.avatar_url = avatar_url;
+  }
+
+  createLecturerDiv(){
+    const lecturerDiv = document.createElement("div");
+    lecturerDiv.className = "lecturer";
+    const img = document.createElement("img");
+    img.alt = "lecturer photo";
+    img.className =  "picture";
+    img.src = this.avatar_url;
+    const span = document.createElement("span");
+    span.className = "username";
+    span.innerHTML = `@${this.login}`;
+  
+    lecturerDiv.appendChild(img);
+    lecturerDiv.appendChild(span);
+    document.querySelector(".lecturers").appendChild(lecturerDiv);  
+  }
+};
+
 function addSpeakerBtnsDiv() {
   const addButton = document.createElement("button");
   addButton.className = "btn-add";
@@ -54,15 +77,17 @@ function createNewInput() {
 
 document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
-  lecturerCount = 0;
+  document.querySelectorAll(".lecturer").forEach(lecturer => {
+    lecturer.parentNode.removeChild(lecturer);
+  })
   let dict = {
     github: (value) => {
       fetch(`https://api.github.com/users/${value}`)
         .then((api) => api.json())
         .then((user) => {
-          document.querySelector(`.preview .lecturer #lecturer${lecturerCount}`).src =
-            user["avatar_url"];
-            lecturerCount++;
+          console.log(user);
+          const newLecturer = new Lecturer(user);
+          newLecturer.createLecturerDiv();
         });
       return ".lecturer .username span";
     },
@@ -72,17 +97,16 @@ document.forms[0].addEventListener("submit", (e) => {
   };
   Object.keys(dict).forEach((key) => {
     document.querySelectorAll(`[name=${key}]`).forEach((div) => {
-      if(key == "github" && counter > 0){
-        setLecturerDiv();
-        counter++;
+      if(key != "github"){
+        document.querySelector(`.preview ${dict[key](div.value)}`)
+        .innerHTML = div.value;
       }
-      document.querySelector(`.preview ${dict[key](div.value)}`)
-      .innerHTML = div.value;
+      else dict[key](div.value);
     });
   });
 });
 
-function setLecturerDiv() {
+function createLecturerDiv() {
   
   const lecturerDiv = document.createElement("div");
   lecturerDiv.className = "lecturer";
