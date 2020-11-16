@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap');
+
+.preview {
+  height: 1080px;
+  width: 1080px;
+
+  font-family: 'Roboto Mono', monospace;
+  font-size: 51px;
+  color: #c5c8c6;
+
+  display: flex;
+  flex-direction: column;
+  background-color: #1d1f21;
+}
+
+.preview .container  {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: pink;
+
+}
+
+.preview .container  {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.preview .lecturers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.preview .lecturer .username {
+  color: #7b85e1;
+}
+
+.preview .lecturer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 245px;
+}
+
+.preview .lecturer img {
+  max-width: 228px;
+  max-height: 228px;
+  border-radius: 100%;
+}
+
+.preview .lecturer span {
+  color: #d15d5d;
+}
+
+.preview .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #7b84e1;
+  padding: 30px;
+}
+
+.preview .event  {
+  color: white;
+}
+
+.preview .event strong {
+  color: white;
+}
+
+.preview .title {
+  font-weight: bold;
+  color: white;
+}
+
+.preview .date {
+  font-weight: 400;
+  color: black;
+}
+
+.preview .date span {
+  color: #470038;
+}
+
+.preview .time {
+  font-weight: 400;
+  color: black;
+}
+.preview .time span {
+  color: white;
+}

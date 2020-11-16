@@ -77,6 +77,8 @@ function createNewInput() {
 
 document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
+
+  // Atualiza dados do preview.
   document.querySelectorAll(".lecturer").forEach(lecturer => {
     lecturer.parentNode.removeChild(lecturer);
   })
@@ -132,6 +134,11 @@ function createLecturerDiv() {
 //   });
 // };
 
+document.querySelector(".theme-field").addEventListener("change", e => {
+  const baseUrl = "http://127.0.0.1:5500/";
+  const theme = `${e.target.value}.css`;  
+  document.querySelector("#theme").href = baseUrl + theme;
+});
 // Adiciona input de novo speaker
 document
   .querySelector(".speaker-btn .btn-add")
