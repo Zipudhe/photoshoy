@@ -134,10 +134,17 @@ function createLecturerDiv() {
 //   });
 // };
 
+// Listen to change in the theme field and loads corresponding css file
 document.querySelector(".theme-field").addEventListener("change", e => {
-  const baseUrl = "http://127.0.0.1:5500/";
   const theme = `${e.target.value}.css`;  
-  document.querySelector("#theme").href = baseUrl + theme;
+
+  let css = document.querySelector("#theme").href;
+  let newCss = css.split("/");
+  newCss.pop();
+  newCss.push(theme);
+  newCss = newCss.toString()
+  const newCssUrl = newCss.replace(/,/g, "/")
+  document.querySelector("#theme").href = newCssUrl;
 });
 // Adiciona input de novo speaker
 document
