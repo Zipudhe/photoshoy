@@ -26,14 +26,20 @@
                 />
               </div>
 
-              <div class="field">
-                <label for="github">Github palestrante</label>
-                <input
-                  type="text"
-                  name="github"
-                  required
-                  placeholder="thaleslim"
-                />
+              <div class="speakers--div">
+                <div class="field speaker" id="speaker0">
+                  <label for="github">Github username do(s) palestrante(s)</label>
+                  <input
+                    type="text"
+                    name="github"
+                    required
+                    placeholder="username do palestrante"
+                  />
+                  <div class="speaker-btn">
+                    <button class="btn-add"> + </button>
+                    <button class="btn-remove"> - </button>
+                  </div>
+                </div>
               </div>
 
               <div class="field">
@@ -47,11 +53,11 @@
               </div>
 
               <div class="field">
-                <label for="time">Data do evento</label>
+                <label for="time">Hora do evento</label>
                 <input type="time" name="time" required placeholder="15:30" />
               </div>
             </fieldset>
-            <button>Screenshot</button>
+            <button class="submit">Preview</button>
             <!-- TODO: bug not always download
                   REFACTOR: https://stackoverflow.com/questions/11620698/how-to-trigger-a-file-download-when-clicking-an-html-button-or-javascript#answers
                   READ : https://codepen.io/Alexee/pen/QKPokb/
@@ -60,9 +66,11 @@
         </div>
         <div class="preview">
           <div class="container">
-            <div class="lecturer">
-              <img src="./face.png" alt="lecturer photo" class="picture" />
-              <span class="username">@<span></span></span>
+            <div class="lecturers">
+              <div class="lecturer">
+                <img src="./face.png" alt="lecturer photo" class="picture" id="lecturer0" />
+                <span class="username">@<span></span></span>
+              </div>  
             </div>
             <div class="info">
               <div class="event"><strong>CJR</strong> Class</div>

@@ -22,6 +22,12 @@
   padding: 30px 80px 80px 80px;
 }
 
+.preview .lecturers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .preview .lecturer {
   display: flex;
   flex-direction: column;
